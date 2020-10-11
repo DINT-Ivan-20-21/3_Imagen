@@ -16,8 +16,7 @@ namespace _3_Imagen
 
         private void opacidad_Checked(object sender, RoutedEventArgs e)
         {
-            double opacity = double.Parse((sender as RadioButton).Tag.ToString(), System.Globalization.CultureInfo.InvariantCulture);
-            modificarImage.Opacity = opacity;
+            modificarImage.Opacity = double.Parse((sender as RadioButton).Tag.ToString(), System.Globalization.CultureInfo.InvariantCulture);
         }
 
         private void ajuste_Checked(object sender, RoutedEventArgs e)
