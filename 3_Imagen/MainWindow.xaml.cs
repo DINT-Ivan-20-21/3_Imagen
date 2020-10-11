@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace _3_Imagen
 {
@@ -23,6 +12,17 @@ namespace _3_Imagen
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void opacidad_Checked(object sender, RoutedEventArgs e)
+        {
+            double opacity = double.Parse((sender as RadioButton).Tag.ToString(), System.Globalization.CultureInfo.InvariantCulture);
+            modificarImage.Opacity = opacity;
+        }
+
+        private void ajuste_Checked(object sender, RoutedEventArgs e)
+        {
+            modificarImage.Stretch = (System.Windows.Media.Stretch)Enum.Parse(typeof(System.Windows.Media.Stretch), (sender as RadioButton).Tag.ToString());
         }
     }
 }
